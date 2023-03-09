@@ -1,1 +1,1 @@
-# Comb-Sort
+# CombSort

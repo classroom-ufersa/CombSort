@@ -1,3 +1,3 @@
 # CombSort
 
-Funciona Krai
+Funciona :)

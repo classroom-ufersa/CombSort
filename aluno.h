@@ -1,1 +1,2 @@
-Aluno * cria_Aluno();
+typedef struct aluno Aluno;
+Aluno *cria_Aluno();

@@ -7,7 +7,7 @@ struct aluno
 {
     char nome[50];
     int matricula;
-    char documento;
+    char documento[20];
 };
 
 Aluno * cria_Aluno()
@@ -21,7 +21,7 @@ Aluno * cria_Aluno()
     printf("Informe o nome do aluno: \n");
     scanf(" %[^\n]s", aluno->nome);
     printf("Informe a matricula do aluno: \n");
-    scanf("%d\n", aluno->matricula);
+    scanf("%d\n", &aluno->matricula);
     printf("Informe o documento do aluno: \n");
     scanf(" %[^\n]s", aluno->documento);
 
@@ -72,7 +72,7 @@ void combsort(char vetor[], int n)
 }
 
 char* recebe_nomes() {
-    int linha = 0;
+    char linha[100], i = 0;
     FILE* aluno_txt;
     char nomes[1500];
 
@@ -84,8 +84,8 @@ char* recebe_nomes() {
     }
 
     while(fgets(linha, 100, aluno_txt) != NULL) {
-        sscanf(linha, "%s", nomes[linha]);
-        linha++;
+        sscanf(linha, "%s", nomes[i]);
+        i++;
     }
 
     fclose(aluno_txt);

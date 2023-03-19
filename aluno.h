@@ -1,2 +1,1 @@
-
-//cabeçalho de funções?
+Aluno * cria_Aluno();

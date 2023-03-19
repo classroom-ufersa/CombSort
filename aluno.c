@@ -10,7 +10,7 @@ struct aluno
     char documento[20];
 };
 
-Aluno * cria_Aluno()
+Aluno * cria_Aluno(Aluno * aluno)
 {
     Aluno * aluno = (Aluno) malloc(sizeof(Aluno));
     if (aluno == NULL)
@@ -21,7 +21,7 @@ Aluno * cria_Aluno()
     printf("Informe o nome do aluno: \n");
     scanf(" %[^\n]s", aluno->nome);
     printf("Informe a matricula do aluno: \n");
-    scanf("%d\n", &aluno->matricula);
+    scanf("%d", &aluno->matricula);
     printf("Informe o documento do aluno: \n");
     scanf(" %[^\n]s", aluno->documento);
 
@@ -37,15 +37,17 @@ Aluno * cria_Aluno()
 
     fclose(aluno_txt);
 
+        printf("Aluno criado com sucesso! \n");
+
     return(aluno);
 }
 
-void combsort(char vetor[], int n)
+void combsort(char * vetor[], int n)
 {
     int gap = n;
     int busca = 1;
 
-    char aux;
+    char * aux;
 
     while (gap > 1 || busca == 1)
     {
@@ -72,9 +74,10 @@ void combsort(char vetor[], int n)
 }
 
 char* recebe_nomes() {
-    char linha[100], i = 0;
+    char linha[100];
+    int i = 0;
     FILE* aluno_txt;
-    char nomes[1500];
+    char * nomes[1500];
 
     aluno_txt = fopen("Alunos.txt", "rt");
 
@@ -84,7 +87,7 @@ char* recebe_nomes() {
     }
 
     while(fgets(linha, 100, aluno_txt) != NULL) {
-        sscanf(linha, "%s", nomes[i]);
+        sscanf(linha, "%s", &nomes[i * 50]);
         i++;
     }
 

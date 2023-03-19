@@ -15,7 +15,7 @@ Aluno * cria_Aluno()
     Aluno * aluno = (Aluno) malloc(sizeof(Aluno));
     if (aluno == NULL)
     {
-        printf("A culpa é de vlad!\n");
+        printf("ERRO!\n");
         exit(1);
     }
     printf("Informe o nome do aluno: \n");
@@ -24,6 +24,20 @@ Aluno * cria_Aluno()
     scanf("%d\n", aluno->matricula);
     printf("Informe o documento do aluno: \n");
     scanf(" %[^\n]s", aluno->documento);
+
+    FILE aluno_txt;
+
+    aluno_txt = fopen("Alunos.txt", "wt");
+
+    if(aluno_txt == NULL) {
+        exit(1);
+    }
+
+    fprintf(aluno_txt, "%s\t%d\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
+
+    fclose(aluno_txt);
+
+    return(aluno);
 }
 
 void combsort(char vetor[], int n)
@@ -55,4 +69,26 @@ void combsort(char vetor[], int n)
 
     }
 
+}
+
+char* recebe_nomes() {
+    int linha = 0;
+    FILE* aluno_txt;
+    char nomes[1500];
+
+    aluno_txt = fopen("Alunos.txt", "rt");
+
+    if(aluno_txt == NULL) {
+        printf("\nERRO!");
+        exit(1);
+    }
+
+    while(fgets(linha, 100, aluno_txt) != NULL) {
+        sscanf(linha, "%s", nomes[linha]);
+        linha++;
+    }
+
+    fclose(aluno_txt);
+
+    return(nomes);
 }

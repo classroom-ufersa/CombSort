@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include "aluno.c"
 
 int main(){
 
-        printf("Comb sort");
+    printf("\nCOMB SORT\n");
+
+    printf("")
+
     return 0;
 }

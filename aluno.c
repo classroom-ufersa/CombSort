@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+//int
 typedef struct aluno
 {
     char nome[50];

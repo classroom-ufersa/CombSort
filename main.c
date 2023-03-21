@@ -4,7 +4,7 @@
 int main(){
 
     int opc;
-    Aluno * aluno;
+    Aluno * alunos;
 
 while (opc != 2)
 {
@@ -16,7 +16,7 @@ while (opc != 2)
         
     if (opc == 1)
     {
-        cria_Aluno(aluno);
+        cria_Aluno(alunos);
     }
 
 }

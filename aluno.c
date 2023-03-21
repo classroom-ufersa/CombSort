@@ -33,7 +33,7 @@ Aluno * cria_Aluno(Aluno * aluno)
         exit(1);
     }
 
-    fprintf(aluno_txt, "%s\t%d\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
+    fprintf(aluno_txt, "Nome: %s\tMatricula: %d\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
 
     fclose(aluno_txt);
 
@@ -94,4 +94,12 @@ char* recebe_nomes() {
     fclose(aluno_txt);
 
     return(nomes);
+}
+
+void menu() {
+
+    int opc;
+    printf("\n====================\n");
+    printf("\n             MENU             \n");
+    printf("Digite o que ");
 }

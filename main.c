@@ -4,14 +4,14 @@
 int main(){
 
     int opc;
-    Aluno * aluno;
+    Aluno * alunos;
 
     printf("Digite 1 para criar um aluno, e 2 para fechar o programa: \n");
     scanf("%d", &opc);
         
     if (opc == 1)
     {
-        cria_Aluno(aluno);
+        cria_Aluno(alunos);
     }
 
 

@@ -12,7 +12,7 @@ struct aluno
 
 Aluno * cria_Aluno()
 {
-    Aluno * aluno = (Aluno) malloc(sizeof(Aluno));
+    Aluno * aluno = (Aluno*) malloc(sizeof(Aluno));
     if (aluno == NULL)
     {
         printf("ERRO!\n");
@@ -25,7 +25,7 @@ Aluno * cria_Aluno()
     printf("Informe o documento do aluno: \n");
     scanf(" %[^\n]s", aluno->documento);
 
-    FILE aluno_txt;
+    FILE* aluno_txt;
 
     aluno_txt = fopen("Alunos.txt", "wt");
 

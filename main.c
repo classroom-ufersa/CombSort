@@ -6,6 +6,11 @@ int main(){
     int opc;
     Aluno * aluno;
 
+while (opc != 2)
+{
+    
+
+
     printf("Digite 1 para criar um aluno, e 2 para fechar o programa: \n");
     scanf("%d", &opc);
         
@@ -14,6 +19,6 @@ int main(){
         cria_Aluno(aluno);
     }
 
-
+}
     return 0;
 }

@@ -42,7 +42,7 @@ Aluno * cria_Aluno(Aluno * aluno)
     return(aluno);
 }
 
-void combsort(char * vetor[], int n)
+void comb_sort(char * vetor[], int n)
 {
     int gap = n;
     int busca = 1;

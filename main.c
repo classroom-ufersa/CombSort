@@ -5,6 +5,7 @@ int main(){
 
     int opc;
     Aluno * alunos;
+    char nome[50];
 
 while (opc != 2)
 {
@@ -17,6 +18,9 @@ while (opc != 2)
     if (opc == 1)
     {
         cria_Aluno(alunos);
+        strcpy(nome[50], recebe_nomes());
+        printf("\n%s\n", nome[50]);
+        
     }
 
 }

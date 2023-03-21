@@ -11,6 +11,34 @@ struct aluno
     char documento[20];
 };
 
+void comb_sort(char *vetor[], int n)
+{
+    int gap = n;
+    int busca = 1;
+
+    char *aux;
+
+    while (gap > 1 || busca == 1)
+    {
+        if (gap > 1)
+        {
+            gap /= 1.3;
+        }
+        int i = 0;
+        busca = 0;
+        while (i + gap < n)
+        {
+            if (strcmp(vetor[i], vetor[i + gap]) > 0)
+            {
+                aux = vetor[i];
+                vetor[i] = vetor[i + gap];
+                vetor[i + gap] = aux;
+                busca = 1;
+            }
+        }
+    }
+}
+
 Aluno *cria_Aluno(Aluno *aluno)
 {
     aluno = (Aluno *)malloc(sizeof(Aluno));
@@ -55,40 +83,14 @@ Aluno *cria_Aluno(Aluno *aluno)
     return (aluno);
 }
 
-void comb_sort(char *vetor[], int n)
-{
-    int gap = n;
-    int busca = 1;
 
-    char *aux;
-
-    while (gap > 1 || busca == 1)
-    {
-        if (gap > 1)
-        {
-            gap /= 1.3;
-        }
-        int i = 0;
-        busca = 0;
-        while (i + gap < n)
-        {
-            if (strcmp(vetor[i], vetor[i + gap]) > 0)
-            {
-                aux = vetor[i];
-                vetor[i] = vetor[i + gap];
-                vetor[i + gap] = aux;
-                busca = 1;
-            }
-        }
-    }
-}
 
 char *recebe_nomes()
 {
     char linha[100];
     int i = 0;
     FILE *aluno_txt;
-    char *nomes[1500];
+    char *nomes[50][3];
 
     aluno_txt = fopen("Alunos.txt", "rt");
 
@@ -100,20 +102,11 @@ char *recebe_nomes()
 
     while (fgets(linha, 100, aluno_txt) != NULL)
     {
-        sscanf(linha, " %[^\n]s", &nomes[i * 50]);
+        sscanf(linha, " %[^\n]s", &nomes[50][i]);
         i++;
     }
 
     fclose(aluno_txt);
 
-    return (nomes);
-}
-
-void menu()
-{
-
-    int opc;
-    printf("\n====================\n");
-    printf("\n             MENU             \n");
-    printf("Digite o que ");
+    return(nomes[50][3]);
 }

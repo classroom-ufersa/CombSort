@@ -3,18 +3,15 @@
 
 int main(){
 
-    int opc = 0;
+    int opc;
     Aluno * aluno;
 
-    while (opc != 2)
-    {
-        printf("Digite 1 para criar um aluno, e 2 para fechar o programa: \n");
-        scanf(opc);
+    printf("Digite 1 para criar um aluno, e 2 para fechar o programa: \n");
+    scanf("%d", &opc);
         
-        if (opc == 1)
-        {
-            aluno = cria_Aluno();
-        }
+    if (opc == 1)
+    {
+        cria_Aluno(aluno);
     }
 
 

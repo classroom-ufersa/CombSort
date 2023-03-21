@@ -12,7 +12,7 @@ struct aluno
 
 Aluno * cria_Aluno(Aluno * aluno)
 {
-    Aluno * aluno = (Aluno*) malloc(sizeof(Aluno));
+    aluno = (Aluno*) malloc(sizeof(Aluno));
     if (aluno == NULL)
     {
         printf("ERRO!\n");
@@ -87,7 +87,7 @@ char* recebe_nomes() {
     }
 
     while(fgets(linha, 100, aluno_txt) != NULL) {
-        sscanf(linha, "%s", &nomes[i * 50]);
+        sscanf(linha, " %[^\n]s", &nomes[i * 50]);
         i++;
     }
 

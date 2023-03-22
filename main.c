@@ -8,7 +8,7 @@ int main(){
     FILE* teste;
     char linha[100];
     char nomes[20][50];
-    //int qnt_linhas;
+    int qnt_linhas;
     int i = 0;
 
     teste = fopen("Alunos.txt", "rt");
@@ -30,29 +30,18 @@ int main(){
 
     }
 
-    //qnt_linhas = contador();
+    qnt_linhas = contador();
 
-    while(fgets(linha, 100, teste) != NULL) {
+    while(i < qnt_linhas) {
         fgets(nomes[i], 50, teste);
         i++;
     }
     printf("AGORA e O LACO!\n");
-   //     for(i = 0; i < 20; i++) {
-   //     printf("%s", nomes[i]);
-    //}
-    printf("\n%s", nomes[0]);
-    printf("\n%s", nomes[1]);
-    printf("\n%s", nomes[2]);
-    printf("\n%s", nomes[3]);
-    printf("\n%s", nomes[4]);
-    printf("\n%s", nomes[5]);
-    printf("\n%s", nomes[6]);
-    printf("\n%s", nomes[7]);
-    printf("\n%s", nomes[8]);   
+        for(i = 0; i < 20; i++) {
+        printf("%s", nomes[i]);
+    }  
 
-
-
-    combSort(nomes[20][50], i);
+    combSort(nomes[qnt_linhas][50], i);
 
     i = 0;
         

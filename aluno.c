@@ -11,7 +11,7 @@ struct aluno
     char documento[20];
 };
 
-void combSort(char lista[20][50], int n) {
+void combSort(char lista[][50], int n) {
     FILE* abrir;
     int lacuna = n;
     int trocado = 1;
@@ -19,7 +19,29 @@ void combSort(char lista[20][50], int n) {
     char temp[50];
     int controle = 0;
 
-    abrir = fopen("Alunos.txt", "at");
+    if (access("AlunosOrdenados.txt", F_OK) == 0)
+    {
+
+        abrir = fopen("AlunosOrdenados.txt", "at");
+
+        while(controle < n) {
+            fprintf(abrir, "%s", lista[controle]);
+            controle++;
+        }
+
+    }
+
+    else
+    {
+
+        while(controle < n) {
+            fprintf(abrir, "%s", lista[controle]);
+            controle++;
+        }
+        
+    }
+
+    abrir = fopen("AlunosOrdenados.txt", "wt");
     if(abrir == NULL){
         printf("\nERRO AO ABRIR O ARQUIVO!\n");
         exit(1);
@@ -41,10 +63,6 @@ void combSort(char lista[20][50], int n) {
 
             }
         }
-    }
-    while(controle < n) {
-        fprintf(abrir, "%s\n", lista[controle]);
-        controle++;
     }
 
     fclose(abrir);
@@ -72,7 +90,7 @@ Aluno *cria_Aluno(Aluno *aluno)
 
         aluno_txt = fopen("Alunos.txt", "at");
 
-        fprintf(aluno_txt, "%s\n", aluno->nome /*,aluno->matricula, aluno->documento*/);
+        fprintf(aluno_txt, "%s\t%s\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
 
         fclose(aluno_txt);
 
@@ -84,7 +102,7 @@ Aluno *cria_Aluno(Aluno *aluno)
 
         aluno_txt = fopen("Alunos.txt", "wt");
 
-        fprintf(aluno_txt, "%s\n", aluno->nome/*, aluno->matricula, aluno->documento*/);
+        fprintf(aluno_txt, "%s\t%s\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
 
         fclose(aluno_txt);
 

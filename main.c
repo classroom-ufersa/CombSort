@@ -35,7 +35,6 @@ int main(){
         fgets(nomes[i], 50, teste);
         i++;
     }
-    printf("AGORA e O LACO!\n");
         for(i = 0; i < qnt_linhas; i++) {
         printf("%s", nomes[i]);
         

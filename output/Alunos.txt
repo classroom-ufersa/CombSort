@@ -1,2 +1,8 @@
-Nome: vlad	Matricula: 123	Documento: 456
-Nome: vald	Matricula: 123	Documento: 345
+Vlad
+Pedro
+Mateus
+Carlos
+Rosana
+Ana
+Gabriel
+vlad

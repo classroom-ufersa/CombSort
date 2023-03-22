@@ -47,27 +47,50 @@ struct aluno
 }*/
 
 void combSort(char lista[][50], int n) {
+    FILE* abrir;
     int lacuna = n;
     int trocado = 1;
     int i, j;
     char temp[50];
+    int teste = 50;
+
+    abrir = fopen("Alunos.txt", "at");
+    if(abrir == NULL){
+        printf("\nERRO AO ABRIR O ARQUIVO!\n");
+        exit(1);
+    }
 
     while (lacuna > 1 || trocado == 1) {
         lacuna = lacuna / 1.3;
+        printf("\n\n%d\n\n", lacuna);
         if (lacuna < 1) {
             lacuna = 1;
+            printf("\nOK OK");
         }
+        printf("\nCOMB111");
 
         trocado = 0;
+        printf("\n\n%d\n\n", trocado);
         for (i = 0, j = i + lacuna; j < n; i++, j++) {
+            printf("\n\nENtrou\n\n");
+            teste = strcmp(lista[i], lista[j]);
+            printf("%d", teste)
             if (strcmp(lista[i], lista[j]) > 0) {
                 strcpy(temp, lista[i]);
                 strcpy(lista[i], lista[j]);
                 strcpy(lista[j], temp);
                 trocado = 1;
+                printf("\nCOMB222");
             }
         }
     }
+    printf("\nCOMB333");
+    while(trocado < n) {
+        printf("%s\n", lista[trocado]);
+    }
+    printf("\nAAAAA");
+
+    fclose(abrir);
 }
 
 Aluno *cria_Aluno(Aluno *aluno)

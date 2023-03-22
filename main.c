@@ -6,7 +6,6 @@ int main(){
     int opc;
     Aluno * alunos;
     FILE* teste;
-    char linha[100];
     char nomes[20][50];
     int qnt_linhas;
     int i = 0;
@@ -37,11 +36,12 @@ int main(){
         i++;
     }
     printf("AGORA e O LACO!\n");
-        for(i = 0; i < 20; i++) {
+        for(i = 0; i < qnt_linhas; i++) {
         printf("%s", nomes[i]);
+        
     }  
 
-    combSort(nomes[qnt_linhas][50], i);
+    combSort(nomes[qnt_linhas][50], qnt_linhas);
 
     i = 0;
         

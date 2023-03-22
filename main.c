@@ -41,7 +41,7 @@ int main(){
         
     }  
 
-    combSort(nomes[qnt_linhas][50], qnt_linhas);
+    combSort(nomes, qnt_linhas);
 
     i = 0;
         

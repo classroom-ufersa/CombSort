@@ -7,52 +7,17 @@
 struct aluno
 {
     char nome[50];
-    int matricula;
+    char matricula[15];
     char documento[20];
 };
 
-/*void comb_sort(char vetor[], int n)
-{
-    int gap = n;
-    int busca = 1;
-    FILE* testar;
-    char linha[100];
-    char aux[50];
-
-    testar = fopen("Alunos.txt", "at");
-    if(testar == NULL) {
-        printf("ERRO no COMB!");
-        exit(1);
-    }
-
-    while (gap > 1 || busca == 1) {
-        if (gap > 1)
-        {
-            gap /= 1.3;
-        }
-        int i = 0;
-        busca = 0;
-        while (i + gap < n) {
-            while(fgets(linha, 100, testar) != NULL){
-                sscanf(linha, "%s", vetor[i]);
-                if (strcmp(vetor[i], vetor[i + gap]) > 0) {
-                    aux[50] = vetor[i];
-                    vetor[i] = vetor[i + gap];
-                    vetor[i + gap] = aux;
-                    busca = 1;
-                }
-            }
-        }
-    }
-}*/
-
-void combSort(char lista[][50], int n) {
+void combSort(char lista[20][50], int n) {
     FILE* abrir;
     int lacuna = n;
     int trocado = 1;
     int i, j;
     char temp[50];
-    int teste = 50;
+    int controle = 0;
 
     abrir = fopen("Alunos.txt", "at");
     if(abrir == NULL){
@@ -62,33 +27,25 @@ void combSort(char lista[][50], int n) {
 
     while (lacuna > 1 || trocado == 1) {
         lacuna = lacuna / 1.3;
-        printf("\n\n%d\n\n", lacuna);
         if (lacuna < 1) {
             lacuna = 1;
-            printf("\nOK OK");
         }
-        printf("\nCOMB111");
 
         trocado = 0;
-        printf("\n\n%d\n\n", trocado);
         for (i = 0, j = i + lacuna; j < n; i++, j++) {
-            printf("\n\nENtrou\n\n");
-            teste = strcmp(lista[i], lista[j]);
-            printf("%d", teste)
             if (strcmp(lista[i], lista[j]) > 0) {
                 strcpy(temp, lista[i]);
                 strcpy(lista[i], lista[j]);
                 strcpy(lista[j], temp);
                 trocado = 1;
-                printf("\nCOMB222");
+
             }
         }
     }
-    printf("\nCOMB333");
-    while(trocado < n) {
-        printf("%s\n", lista[trocado]);
+    while(controle < n) {
+        fprintf(abrir, "%s\n", lista[controle]);
+        controle++;
     }
-    printf("\nAAAAA");
 
     fclose(abrir);
 }
@@ -103,10 +60,10 @@ Aluno *cria_Aluno(Aluno *aluno)
     }
     printf("Informe o nome do aluno: \n");
     scanf(" %[^\n]s", aluno->nome);
-    /*printf("Informe a matricula do aluno: \n");
-    scanf("%d", &aluno->matricula);
+    printf("Informe a matricula do aluno: \n");
+    scanf(" %[^\n]s", &aluno->matricula);
     printf("Informe o documento do aluno: \n");
-    scanf(" %[^\n]s", aluno->documento);*/
+    scanf(" %[^\n]s", aluno->documento);
 
     FILE *aluno_txt;
 
@@ -157,32 +114,3 @@ int contador() {
 
     return(numLinhas);
 }
-
-
-
-/*char recebe_nomes()
-{
-    char linha[100];
-    int i = 0;
-    FILE* aluno_txt;
-    char nomes[50];
-
-    aluno_txt = fopen("Alunos.txt", "rt");
-
-    if (aluno_txt == NULL)
-    {
-        printf("\nERRO!");
-        exit(1);
-    }
-
-
-    while  fgets(linha, 100, aluno_txt);
-    //{
-        sscanf(linha, " %[^\n]s", &nomes[50]);
-        //i++;
-   // }
-
-    fclose(aluno_txt);
-
-    return(nomes[0]);
-}*/

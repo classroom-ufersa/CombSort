@@ -11,64 +11,6 @@ struct aluno
     char documento[20];
 };
 
-void combSort(char lista[][50], int n) {
-    FILE* abrir;
-    int lacuna = n;
-    int trocado = 1;
-    int i, j;
-    char temp[50];
-    int controle = 0;
-
-    if (access("AlunosOrdenados.txt", F_OK) == 0)
-    {
-
-        abrir = fopen("AlunosOrdenados.txt", "at");
-
-        while(controle < n) {
-            fprintf(abrir, "%s", lista[controle]);
-            controle++;
-        }
-
-    }
-
-    else
-    {
-        abrir = fopen("AlunosOrdenados.txt", "wt");
-
-        while(controle < n) {
-            fprintf(abrir, "%s", lista[controle]);
-            controle++;
-        }
-
-    }
-
-    abrir = fopen("AlunosOrdenados.txt", "wt");
-    if(abrir == NULL){
-        printf("\nERRO AO ABRIR O ARQUIVO!\n");
-        exit(1);
-    }
-
-    while (lacuna > 1 || trocado == 1) {
-        lacuna = lacuna / 1.3;
-        if (lacuna < 1) {
-            lacuna = 1;
-        }
-
-        trocado = 0;
-        for (i = 0, j = i + lacuna; j < n; i++, j++) {
-            if (strcmp(lista[i], lista[j]) > 0) {
-                strcpy(temp, lista[i]);
-                strcpy(lista[i], lista[j]);
-                strcpy(lista[j], temp);
-                trocado = 1;
-
-            }
-        }
-    }
-
-    fclose(abrir);
-}
-
 Aluno *cria_Aluno(Aluno *aluno)
 {
     aluno = (Aluno *)malloc(sizeof(Aluno));
@@ -111,6 +53,56 @@ Aluno *cria_Aluno(Aluno *aluno)
     }
 
     return (aluno);
+}
+
+void combSort(char lista[][50], int n) {
+    FILE* abrir;
+    int lacuna = n;
+    int trocado = 1;
+    int i, j;
+    char temp[50];
+    int controle = 0;
+
+    while (lacuna > 1 || trocado == 1) {
+        lacuna = lacuna / 1.3;
+        if (lacuna < 1) {
+            lacuna = 1;
+        }
+
+        trocado = 0;
+        for (i = 0, j = i + lacuna; j < n; i++, j++) {
+            if (strcmp(lista[i], lista[j]) > 0) {
+                strcpy(temp, lista[i]);
+                strcpy(lista[i], lista[j]);
+                strcpy(lista[j], temp);
+                trocado = 1;
+
+            }
+        }
+    }
+
+    if (access("AlunosOrdenados.txt", F_OK) == 0) {
+
+        abrir = fopen("AlunosOrdenados.txt", "at");
+
+        while(controle < n) {
+            fprintf(abrir, "%s", lista[controle]);
+            controle++;
+        }
+
+    }
+
+    else {
+        abrir = fopen("AlunosOrdenados.txt", "wt");
+
+        while(controle < n) {
+            fprintf(abrir, "%s", lista[controle]);
+            controle++;
+        }
+
+    }
+
+    fclose(abrir);
 }
 
 int contador() {

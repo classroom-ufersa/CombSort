@@ -38,7 +38,7 @@ void combSort(char lista[][50], int n) {
             fprintf(abrir, "%s", lista[controle]);
             controle++;
         }
-        
+
     }
 
     abrir = fopen("AlunosOrdenados.txt", "wt");
@@ -90,7 +90,7 @@ Aluno *cria_Aluno(Aluno *aluno)
 
         aluno_txt = fopen("Alunos.txt", "at");
 
-        fprintf(aluno_txt, "%s\t%s\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
+        fprintf(aluno_txt, "Nome: %s\tMatricula: %s\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
 
         fclose(aluno_txt);
 
@@ -102,7 +102,7 @@ Aluno *cria_Aluno(Aluno *aluno)
 
         aluno_txt = fopen("Alunos.txt", "wt");
 
-        fprintf(aluno_txt, "%s\t%s\t%s\n", aluno->nome, aluno->matricula, aluno->documento);
+        fprintf(aluno_txt, "Nome: %s\tMatricula: %s\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
 
         fclose(aluno_txt);
 

@@ -10,10 +10,16 @@ int main(){
     int qnt_linhas;
     int i = 0;
 
-    teste = fopen("Alunos.txt", "rt");
-    if(teste == NULL) {
-        exit(1);
+    if (access("Alunos.txt", F_OK) == 0)
+    {
+        teste = fopen("Alunos.txt", "rt");
     }
+
+    else
+    {
+        teste = fopen("Alunos.txt", "wt");
+    }
+    
 
     while (opc != 2) {
     
@@ -35,10 +41,6 @@ int main(){
         fgets(nomes[i], 50, teste);
         i++;
     }
-        for(i = 0; i < qnt_linhas; i++) {
-        printf("%s", nomes[i]);
-        
-    }  
 
     combSort(nomes, qnt_linhas);
 

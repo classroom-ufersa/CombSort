@@ -33,6 +33,7 @@ void combSort(char lista[][50], int n) {
 
     else
     {
+        abrir = fopen("AlunosOrdenados.txt", "wt");
 
         while(controle < n) {
             fprintf(abrir, "%s", lista[controle]);

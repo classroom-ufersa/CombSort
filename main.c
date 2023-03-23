@@ -5,21 +5,14 @@ int main() {
 
     int opc;
     Aluno * alunos;
-    FILE* teste;
-    char nomes[20][50];
-    int qnt_linhas;
-    int i = 0;
+    //FILE* teste;
+    char **nomes = (char**)malloc(20 * sizeof(char*));
+    int qnt_linhas, i = 0;
 
-    if (access("Alunos.txt", F_OK) == 0)
-    {
-        teste = fopen("Alunos.txt", "rt");
-    }
-
-    else
-    {
-        teste = fopen("Alunos.txt", "wt");
-    }
     
+    for(i = 0; i < 20; i++) {
+        nomes[i] = (char*)malloc(50 * sizeof(char));
+    } 
 
     while (opc != 2) {
     
@@ -36,18 +29,20 @@ int main() {
 
     qnt_linhas = contador();
 
-    while(i < qnt_linhas) {
-        fgets(nomes[i], 50, teste);
-        i++;
+    //printf("aki\n");
+
+    nomes = recebe_nomes(qnt_linhas);
+
+    //printf("\nAKIIII");
+
+    combSort(nomes, qnt_linhas);   
+
+    printf("\n??\n");
+
+    for(i = 0; i < 20; i++){
+        free(nomes[i]);
     }
-
-    combSort(nomes, qnt_linhas);
-
-    i = 0;
-        
-
-    fclose(teste);
-    remove("Alunos.txt");
+    free(nomes);
 
     return 0;
 }

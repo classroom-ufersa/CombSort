@@ -1,0 +1,6 @@
+Nome: Joao	Matricula: 2	Documento: 2
+Nome: Vlad	Matricula: 4	Documento: 4
+Nome: Vlad	Matricula: 6	Documento: 6
+Nome: Gabriel	Matricula: 8	Documento: 8
+Nome: Heitor	Matricula: 5	Documento: 5
+Nome: Carlos	Matricula: 45	Documento: 45

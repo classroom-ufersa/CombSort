@@ -47,6 +47,7 @@ int main() {
         
 
     fclose(teste);
+    remove("Alunos.txt");
 
     return 0;
 }

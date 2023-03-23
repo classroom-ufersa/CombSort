@@ -3,3 +3,9 @@ Nome: Davi	Matricula: 4	Documento: 4
 Nome: Mateus	Matricula: 9	Documento: 9
 Nome: Pedro	Matricula: 2	Documento: 2
 Nome: Vlad	Matricula: 7	Documento: 7
+Nome: Carlos	Matricula: 5	Documento: 5
+Nome: Davi	Matricula: 4	Documento: 4
+Nome: Mateus	Matricula: 9	Documento: 9
+Nome: Pedro	Matricula: 2	Documento: 2
+Nome: Vitor	Matricula: 0	Documento: 0
+Nome: Vlad	Matricula: 7	Documento: 7

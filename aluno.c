@@ -40,21 +40,21 @@ Aluno *cria_Aluno(Aluno *aluno)
 }
 
 void combSort(char lista[][50], int n) {
-    FILE* abrir;
-    int lacuna = n;
-    int trocado = 1;
-    int i, j;
-    char temp[50];
-    int controle = 0;
+    FILE* abrir; //c1
+    int lacuna = n; //c2
+    int trocado = 1;//c3
+    int i, j; //c3
+    char temp[50]; //c4
+    int controle = 0; //c4
 
-    while (lacuna > 1 || trocado == 1) {
-        lacuna = lacuna / 1.3;
+    while (lacuna > 1 || trocado == 1) { //c5*n
+        lacuna = lacuna / 1.3; 
         if (lacuna < 1) {
-            lacuna = 1;
+            lacuna = 1; 
         }
 
         trocado = 0;
-        for (i = 0, j = i + lacuna; j < n; i++, j++) {
+        for (i = 0, j = i + lacuna; j < n; i++, j++) { //n*n
             if (strcmp(lista[i], lista[j]) > 0) {
                 strcpy(temp, lista[i]);
                 strcpy(lista[i], lista[j]);
@@ -65,7 +65,12 @@ void combSort(char lista[][50], int n) {
         }
     }
 
-
+    /*
+        pior caso e médio caso:
+        O(n²);
+        Melhor caso:
+        O(n);
+    */
 
     abrir = fopen("Alunos.txt", "wt");
 

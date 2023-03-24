@@ -22,7 +22,7 @@ Aluno *cria_Aluno(Aluno *aluno)
     printf("Informe o nome do aluno: \n");
     scanf(" %[^\n]s", aluno->nome);
     printf("Informe a matricula do aluno: \n");
-    scanf(" %[^\n]s", &aluno->matricula);
+    scanf(" %[^\n]s", aluno->matricula);
     printf("Informe o documento do aluno: \n");
     scanf(" %[^\n]s", aluno->documento);
 

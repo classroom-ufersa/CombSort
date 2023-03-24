@@ -8,17 +8,6 @@ int main(){
     FILE* teste;
     char nomes[20][50];
     int qnt_linhas;
-    int i = 0;
-
-    if (access("Alunos.txt", F_OK) == 0)
-    {
-        teste = fopen("Alunos.txt", "rt");
-    }
-
-    else
-    {
-        teste = fopen("Alunos.txt", "wt");
-    }
 
 
     while (opc != 2) {
@@ -37,6 +26,10 @@ int main(){
 
     qnt_linhas = contador();
 
+    int i = 0;
+
+    teste = fopen("Alunos.txt", "rt");
+
     while(i < qnt_linhas) {
         fgets(nomes[i], 50, teste);
         i++;
@@ -44,7 +37,6 @@ int main(){
 
     combSort(nomes, qnt_linhas);
 
-    i = 0;
 
 
     fclose(teste);

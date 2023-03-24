@@ -28,29 +28,13 @@ Aluno *cria_Aluno(Aluno *aluno)
 
     FILE *aluno_txt;
 
-    if (access("Alunos.txt", F_OK) == 0)
-    {
+    aluno_txt = fopen("Alunos.txt", "at");
 
-        aluno_txt = fopen("Alunos.txt", "at");
+    fprintf(aluno_txt, "Nome: %s\tMatricula: %s\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
 
-        fprintf(aluno_txt, "Nome: %s\tMatricula: %s\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
+    fclose(aluno_txt);  
 
-        fclose(aluno_txt);
-
-        printf("Aluno criado com sucesso! \n");
-    }
-
-    else
-    {
-
-        aluno_txt = fopen("Alunos.txt", "wt");
-
-        fprintf(aluno_txt, "Nome: %s\tMatricula: %s\tDocumento: %s\n", aluno->nome, aluno->matricula, aluno->documento);
-
-        fclose(aluno_txt);
-
-        printf("Aluno criado com sucesso! \n");
-    }
+    printf("Aluno criado com sucesso! \n");
 
     return (aluno);
 }
@@ -81,25 +65,13 @@ void combSort(char lista[][50], int n) {
         }
     }
 
-    if (access("AlunosOrdenados.txt", F_OK) == 0) {
 
-        abrir = fopen("AlunosOrdenados.txt", "at");
 
-        while(controle < n) {
-            fprintf(abrir, "%s", lista[controle]);
-            controle++;
-        }
+    abrir = fopen("Alunos.txt", "wt");
 
-    }
-
-    else {
-        abrir = fopen("AlunosOrdenados.txt", "wt");
-
-        while(controle < n) {
-            fprintf(abrir, "%s", lista[controle]);
-            controle++;
-        }
-
+    while(controle < n) {
+        fprintf(abrir, "%s", lista[controle]);
+        controle++;
     }
 
     fclose(abrir);

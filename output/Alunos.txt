@@ -1,5 +1,7 @@
-vlad
-pedro
-joao
-mateus
-carlos
+Nome: Ana	Matricula: 6	Documento: 6
+Nome: Bruno	Matricula: 4	Documento: 4
+Nome: Carlos	Matricula: 7	Documento: 7
+Nome: Mateus	Matricula: 3	Documento: 3
+Nome: Pedro	Matricula: 4	Documento: 4
+Nome: Vlad	Matricula: 1	Documento: 1
+Nome: victor	Matricula: 9	Documento: 9

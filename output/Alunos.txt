@@ -1,6 +1,0 @@
-Nome: Ana	Matricula: 34	Documento: 56
-Nome: Carlos	Matricula: 3	Documento: 5
-Nome: Clara Maria	Matricula: 2	Documento: 1
-Nome: Joao	Matricula: 3	Documento: 4
-Nome: Mateus	Matricula: 9	Documento: 9
-Nome: Vlad	Matricula: 2	Documento: 3

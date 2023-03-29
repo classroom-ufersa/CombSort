@@ -72,7 +72,7 @@ void combSort(char lista[][50], int n) {
         pior caso e médio caso:
         O(n²);
         Melhor caso:
-        O(n);
+        O(n log n);
     */
 
     abrir = fopen("Alunos.txt", "wt");

@@ -23,6 +23,9 @@ Aluno *cria_Aluno(Aluno *aluno)
     //Ler as informações digitadas pelo usuário.
     printf("Informe o nome do aluno: \n");
     scanf(" %[^\n]s", aluno->nome);
+    if (strlen(aluno->nome) > 0) {
+        aluno->nome[0] = toupper(aluno->nome[0]);   //Verificando se a primeira letra do nome é maiúscula.
+    }
     printf("Informe a matricula do aluno: \n");
     scanf(" %[^\n]s", aluno->matricula);
     printf("Informe o documento do aluno: \n");

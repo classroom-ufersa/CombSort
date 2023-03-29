@@ -1,4 +1,0 @@
-Nome: c	Matricula: 213	Documento: v
-Nome: calros	Matricula: '2	Documento: 213
-Nome: r1	Matricula: 234124	Documento: 12412
-Nome: t	Matricula: 24124	Documento: 124124

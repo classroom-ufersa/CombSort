@@ -47,9 +47,8 @@ Aluno *cria_Aluno(Aluno *aluno)
     // Imprime a mensagem que o aluno foi criado, depois de 2 segundos, a tela seá limpa.
     system("cls");
     // Função para limpar a tela.
-
     free(aluno);
-
+    // Liberando a memória.
     return(aluno);
 }
 // Aplicando o combsort.

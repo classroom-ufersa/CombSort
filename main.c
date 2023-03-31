@@ -3,7 +3,7 @@
 int main(){
 // declaração das variaveis e criação dos ponteiros
     int opc;
-    Aluno * alunos = 0;
+    Aluno * alunos;
     FILE* teste;
     char nomes[20][50];
     int qnt_linhas;

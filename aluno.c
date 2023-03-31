@@ -41,6 +41,10 @@ Aluno *cria_Aluno(Aluno *aluno)
 //Imprime as seguintes menssagens na tela do usuário.
     printf("Aluno criado com sucesso! \n");
 
+    sleep(2);
+//Imprime a mensagem que o aluno foi criado, depois de 2 segundos, a tela seá limpa.
+    system("cls");
+//Função para limpar a tela.
     return (aluno);
 }
 //Aplicando o combsort

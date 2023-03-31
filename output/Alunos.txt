@@ -1,3 +1,0 @@
-Nome: Aby	Matricula: 12	Documento: 12
-Nome: Ana	Matricula: 23	Documento: 34
-Nome: Joao	Matricula: 23	Documento: 23

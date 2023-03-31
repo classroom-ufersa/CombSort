@@ -14,7 +14,8 @@ struct aluno
 // implementação da função cria_Aluno
 Aluno *cria_Aluno(Aluno *aluno)
 {
-    // Alocando a memoria    aluno = (Aluno *)malloc(sizeof(Aluno));
+    // Alocando a memoria    
+    aluno = (Aluno *)malloc(sizeof(Aluno));
     if (aluno == NULL)
     {
         printf("ERRO!\n");

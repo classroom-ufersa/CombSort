@@ -1,19 +1,15 @@
-#include <stdio.h>
 #include "aluno.c"
 
 int main(){
 // declaração das variaveis e criação dos ponteiros
     int opc;
-    Aluno * alunos;
+    Aluno * alunos = 0;
     FILE* teste;
     char nomes[20][50];
     int qnt_linhas;
 
 // estrutura de repetição
     while (opc != 2) {
-
-
-
         printf("Digite 1 para criar um aluno, e 2 para fechar o programa: \n");
         scanf("%d", &opc);
 // Analisa se o usuário vai criar um aluno

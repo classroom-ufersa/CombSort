@@ -14,8 +14,7 @@ struct aluno
 // implementação da função cria_Aluno
 Aluno *cria_Aluno(Aluno *aluno)
 {
-    // Alocando a memoria
-    aluno = (Aluno *)malloc(sizeof(Aluno));
+    // Alocando a memoria    aluno = (Aluno *)malloc(sizeof(Aluno));
     if (aluno == NULL)
     {
         printf("ERRO!\n");
@@ -48,7 +47,10 @@ Aluno *cria_Aluno(Aluno *aluno)
     // Imprime a mensagem que o aluno foi criado, depois de 2 segundos, a tela seá limpa.
     system("cls");
     // Função para limpar a tela.
-    return (aluno);
+
+    free(aluno);
+
+    return(aluno);
 }
 // Aplicando o combsort.
 void combSort(char lista[][50], int n)

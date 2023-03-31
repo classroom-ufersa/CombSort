@@ -1,7 +1,7 @@
 #include "aluno.c"
 
 int main(){
-// declaração das variaveis e criação dos ponteiros
+// declaração das variaveis e criação dos ponteiros.
     int opc;
     Aluno * alunos = 0;
     FILE* teste;

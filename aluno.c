@@ -49,7 +49,7 @@ Aluno *cria_Aluno(Aluno *aluno)
     system("cls");
     // Função para limpar a tela.
     free(aluno);
-    // Liberando a mem
+    // Liberando a memória
     return(aluno);
 }
 // Aplicando o combsort.
